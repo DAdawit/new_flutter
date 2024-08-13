@@ -3,6 +3,11 @@ import 'package:flutter_application_1/base/bottom_nav_bar.dart';
 
 void main() {
   runApp(const MyApp());
+  var test = TestClass(x: 10, y: 20);
+  print(test.x);
+  var newTest = test.copywith(x: 100);
+  print(newTest.x);
+  print(newTest.y);
 }
 
 class MyApp extends StatelessWidget {
@@ -11,9 +16,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Demo',
       home: BottomNavBar(),
     );
+  }
+}
+
+class TestClass {
+  int x;
+  int y;
+
+  TestClass({required this.x, required this.y});
+
+  TestClass copywith({int? x, int? y}) {
+    return TestClass(x: x ?? this.x, y: y ?? this.y);
   }
 }
