@@ -61,6 +61,7 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 48),
                 const AppDoubleText(
                     bigText: "Upcomming Flight", smallText: "view all"),
+                const SizedBox(height: 20),
                 const Tickeview(),
               ],
             ),
