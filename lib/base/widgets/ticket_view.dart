@@ -5,6 +5,7 @@ import 'package:flutter_application_1/base/res/styles/app_styles.dart';
 import 'package:flutter_application_1/base/widgets/app_layoutbuilder_widget.dart';
 import 'package:flutter_application_1/base/widgets/big_circle_dot.dart';
 import 'package:flutter_application_1/base/widgets/big_dot.dart';
+import 'package:flutter_application_1/base/widgets/text_style_third.dart';
 
 class Tickeview extends StatelessWidget {
   const Tickeview({super.key});
@@ -71,28 +72,15 @@ class Tickeview extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                             width: 100,
-                            child: Text(
-                              "New-York",
-                              style: AppStyles.headLine4
-                                  .copyWith(fontSize: 14, color: Colors.white),
-                            )),
+                            child: TextStyleThird(
+                                text: "New-York", alignTextStart: true)),
                         Expanded(child: Container()),
-                        Text(
-                          "8H 30M",
-                          style: AppStyles.headLine4
-                              .copyWith(fontSize: 14, color: Colors.white),
-                        ),
+                        const TextStyleThird(text: "8H 30m"),
                         Expanded(child: Container()),
-                        SizedBox(
-                            width: 100,
-                            child: Text(
-                              "London",
-                              textAlign: TextAlign.end,
-                              style: AppStyles.headLine4
-                                  .copyWith(fontSize: 14, color: Colors.white),
-                            )),
+                        const SizedBox(
+                            width: 100, child: TextStyleThird(text: "London")),
                       ],
                     ),
                     const Row(
@@ -159,28 +147,17 @@ class Tickeview extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                             width: 100,
-                            child: Text(
-                              "Date",
-                              style: AppStyles.headLine4
-                                  .copyWith(fontSize: 14, color: Colors.white),
+                            child: TextStyleThird(
+                              text: "Date",
+                              alignTextStart: true,
                             )),
                         Expanded(child: Container()),
-                        Text(
-                          "Departure time",
-                          style: AppStyles.headLine4
-                              .copyWith(fontSize: 14, color: Colors.white),
-                        ),
+                        const TextStyleThird(text: "Departure time"),
                         Expanded(child: Container()),
-                        SizedBox(
-                            width: 100,
-                            child: Text(
-                              "Number",
-                              textAlign: TextAlign.end,
-                              style: AppStyles.headLine4
-                                  .copyWith(fontSize: 14, color: Colors.white),
-                            )),
+                        const SizedBox(
+                            width: 100, child: TextStyleThird(text: "Number")),
                       ],
                     ),
                     const Row(
