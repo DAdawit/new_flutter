@@ -1,14 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/base/res/styles/app_styles.dart';
+import 'package:flutter_application_1/base/widgets/app_column_text_layout.dart';
 import 'package:flutter_application_1/base/widgets/app_layoutbuilder_widget.dart';
 import 'package:flutter_application_1/base/widgets/big_circle_dot.dart';
 import 'package:flutter_application_1/base/widgets/big_dot.dart';
-import 'package:flutter_application_1/base/widgets/text_style_third.dart';
+import 'package:flutter_application_1/base/widgets/text_style_fourth.dart';
 
 class Tickeview extends StatelessWidget {
-  const Tickeview({super.key});
+  final Map<String, dynamic> ticket;
+  const Tickeview({super.key, required this.ticket});
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +34,13 @@ class Tickeview extends StatelessWidget {
                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "NYC",
+                          ticket["from"]["code"],
                           style:
                               AppStyles.headLine3.copyWith(color: Colors.white),
                         ),
                         Expanded(child: Container()),
                         const BigDot(),
+                        // ticket flying icon
                         Expanded(
                             child: Stack(
                           children: [
@@ -61,7 +62,7 @@ class Tickeview extends StatelessWidget {
                         const BigDot(),
                         Expanded(child: Container()),
                         Text(
-                          "LDN",
+                          ticket["to"]["code"],
                           style:
                               AppStyles.headLine3.copyWith(color: Colors.white),
                         ),
@@ -72,15 +73,19 @@ class Tickeview extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const SizedBox(
+                        SizedBox(
                             width: 100,
-                            child: TextStyleThird(
-                                text: "New-York", alignTextStart: true)),
+                            child:
+                                TextStyleFourth(text: ticket["from"]["name"])),
                         Expanded(child: Container()),
-                        const TextStyleThird(text: "8H 30m"),
+                        TextStyleFourth(text: ticket["flying_time"]),
                         Expanded(child: Container()),
-                        const SizedBox(
-                            width: 100, child: TextStyleThird(text: "London")),
+                        SizedBox(
+                            width: 100,
+                            child: TextStyleFourth(
+                              text: ticket["to"]["name"],
+                              alignText: TextAlign.end,
+                            )),
                       ],
                     ),
                     const Row(
@@ -123,43 +128,24 @@ class Tickeview extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          "1 MAY",
-                          style:
-                              AppStyles.headLine3.copyWith(color: Colors.white),
+                        AppColumnTextLayout(
+                          topText: ticket["date"],
+                          bottomText: "Date",
                         ),
-                        Expanded(child: Container()),
-                        Text(
-                          "08:00 AM",
-                          style:
-                              AppStyles.headLine3.copyWith(color: Colors.white),
+                        AppColumnTextLayout(
+                          topText: ticket["departure_time"],
+                          bottomText: "Departure Time",
+                          aligment: CrossAxisAlignment.center,
                         ),
-                        Expanded(child: Container()),
-                        Text(
-                          "23",
-                          style:
-                              AppStyles.headLine3.copyWith(color: Colors.white),
+                        AppColumnTextLayout(
+                          topText: ticket["number"].toString(),
+                          bottomText: "Number",
+                          aligment: CrossAxisAlignment.end,
                         ),
                       ],
                     ),
                     // show deparure and destination with icons first lline
                     const SizedBox(height: 3),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const SizedBox(
-                            width: 100,
-                            child: TextStyleThird(
-                              text: "Date",
-                              alignTextStart: true,
-                            )),
-                        Expanded(child: Container()),
-                        const TextStyleThird(text: "Departure time"),
-                        Expanded(child: Container()),
-                        const SizedBox(
-                            width: 100, child: TextStyleThird(text: "Number")),
-                      ],
-                    ),
                     const Row(
                       children: [],
                     ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/base/res/styles/app_styles.dart';
 import 'package:flutter_application_1/base/res/styles/media.dart';
+import 'package:flutter_application_1/base/utils/all_json.dart';
 import 'package:flutter_application_1/base/widgets/app_double_text.dart';
 import 'package:flutter_application_1/base/widgets/ticket_view.dart';
 
@@ -62,7 +63,16 @@ class HomeScreen extends StatelessWidget {
                 const AppDoubleText(
                     bigText: "Upcomming Flight", smallText: "view all"),
                 const SizedBox(height: 20),
-                const Tickeview(),
+                SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      // children: [Tickeview(), Tickeview(), Tickeview()],
+                      children: ticketList
+                          .take(5)
+                          .map(
+                              (singleTicket) => Tickeview(ticket: singleTicket))
+                          .toList(),
+                    )),
               ],
             ),
           ),
