@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base/res/styles/app_styles.dart';
+import 'package:flutter_application_1/screens/all_tickets.dart';
 
 class AppDoubleText extends StatelessWidget {
   const AppDoubleText(
@@ -19,7 +19,14 @@ class AppDoubleText extends StatelessWidget {
           style: AppStyles.headLine1,
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute<void>(
+                builder: (BuildContext context) => const AllTickets(),
+              ),
+            );
+          },
           child: Text(
             smallText,
             style: AppStyles.textStyle.copyWith(color: AppStyles.primaryColor),

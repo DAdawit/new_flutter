@@ -68,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                     child: Row(
                       // children: [Tickeview(), Tickeview(), Tickeview()],
                       children: ticketList
-                          .take(5)
+                          .take(3)
                           .map(
                               (singleTicket) => Tickeview(ticket: singleTicket))
                           .toList(),
