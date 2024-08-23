@@ -9,24 +9,27 @@ class AllTickets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "All Tickets",
-          style: AppStyles.headLine3,
+        appBar: AppBar(
+          title: Text(
+            "All Tickets",
+            style: AppStyles.headLine3,
+          ),
         ),
-      ),
-      body: Container(
-        alignment: Alignment.center,
-        child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Column(
-              // children: [Tickeview(), Tickeview(), Tickeview()],
-              children: ticketList
-                  .take(5)
-                  .map((singleTicket) => Tickeview(ticket: singleTicket))
-                  .toList(),
-            )),
-      ),
-    );
+        body: ListView(
+          children: [
+            SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  // children: [Tickeview(), Tickeview(), Tickeview()],
+                  children: ticketList
+                      .take(5)
+                      .map((singleTicket) => Tickeview(
+                            ticket: singleTicket,
+                            wholeScreen: true,
+                          ))
+                      .toList(),
+                )),
+          ],
+        ));
   }
 }

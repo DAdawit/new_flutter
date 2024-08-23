@@ -8,7 +8,8 @@ import 'package:flutter_application_1/base/widgets/text_style_fourth.dart';
 
 class Tickeview extends StatelessWidget {
   final Map<String, dynamic> ticket;
-  const Tickeview({super.key, required this.ticket});
+  final bool wholeScreen;
+  const Tickeview({super.key, required this.ticket, this.wholeScreen = false});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class Tickeview extends StatelessWidget {
       width: size.width * 0.85,
       height: 189,
       child: Container(
-          margin: const EdgeInsets.only(right: 16),
+          margin: EdgeInsets.only(right: wholeScreen ? 0 : 16),
           child: Column(
             children: [
               // ble part of the ticket
