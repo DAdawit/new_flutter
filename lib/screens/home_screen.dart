@@ -1,10 +1,10 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/base/res/styles/app_styles.dart';
 import 'package:flutter_application_1/base/res/styles/media.dart';
 import 'package:flutter_application_1/base/utils/all_json.dart';
+import 'package:flutter_application_1/base/utils/app_routes.dart';
 import 'package:flutter_application_1/base/widgets/app_double_text.dart';
 import 'package:flutter_application_1/base/widgets/ticket_view.dart';
 
@@ -60,8 +60,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 48),
-                const AppDoubleText(
-                    bigText: "Upcomming Flight", smallText: "view all"),
+                AppDoubleText(
+                  bigText: "Upcomming Flight",
+                  smallText: "view all",
+                  fun: () => Navigator.pushNamed(context, AppRoutes.allTickets),
+                ),
                 const SizedBox(height: 20),
                 SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -73,6 +76,12 @@ class HomeScreen extends StatelessWidget {
                               (singleTicket) => Tickeview(ticket: singleTicket))
                           .toList(),
                     )),
+                const SizedBox(height: 48),
+                AppDoubleText(
+                  bigText: "Hotels",
+                  smallText: "view all",
+                  fun: () => Navigator.pushNamed(context, AppRoutes.hotels),
+                ),
               ],
             ),
           ),

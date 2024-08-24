@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base/bottom_nav_bar.dart';
+import 'package:flutter_application_1/base/utils/app_routes.dart';
+import 'package:flutter_application_1/screens/all_tickets.dart';
+import 'package:flutter_application_1/screens/hotels.dart';
 
 void main() {
   runApp(const MyApp());
-  var test = TestClass(x: 10, y: 20);
-  print(test.x);
-  var newTest = test.copywith(x: 100);
-  print(newTest.x);
-  print(newTest.y);
+  // var test = TestClass(x: 10, y: 20);
+  // print(test.x);
+  // var newTest = test.copywith(x: 100);
+  // print(newTest.x);
+  // print(newTest.y);
 }
 
 class MyApp extends StatelessWidget {
@@ -16,9 +19,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      home: BottomNavBar(),
+      routes: AppRoutes.getRoutes(),
+
+      // home: const BottomNavBar(),
+      // routes: {
+      //   "/": (context) => const BottomNavBar(),
+      //   "all_tickets": (context) => const AllTickets(),
+      //   "hotels": (context) => const Hotels()
+      // },
     );
   }
 }
