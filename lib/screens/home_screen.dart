@@ -20,6 +20,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -83,8 +84,15 @@ class HomeScreen extends StatelessWidget {
                   smallText: "view all",
                   fun: () => Navigator.pushNamed(context, AppRoutes.hotels),
                 ),
-                const SizedBox(height: 48),
-                const Hotel()
+                const SizedBox(height: 16),
+                SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: hotelList
+                          .take(5)
+                          .map((singleHotel) => Hotel(hotel: singleHotel))
+                          .toList(),
+                    ))
               ],
             ),
           ),

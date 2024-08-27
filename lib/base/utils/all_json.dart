@@ -1,23 +1,96 @@
 List<Map<String, dynamic>> hotelList = [
   {
-    'image': 'one.png',
+    'image': 'bedroom1.jpg',
     'place': 'Open Space',
     'destination': 'London',
     'price': 25
   },
   {
-    'image': 'two.png',
+    'image': 'bedroom2.jpg',
     'place': 'Global Will',
     'destination': 'London',
     'price': 40
   },
   {
-    'image': 'three.png',
+    'image': 'bedroom3.jpg',
     'place': 'Tallest Building',
     'destination': 'Dubai',
     'price': 68
   },
+  {
+    'image': 'bedroom4.jpg',
+    'place': 'Skyline View',
+    'destination': 'New York',
+    'price': 150
+  },
+  {
+    'image': 'bedroom5.jpg',
+    'place': 'Ocean Breeze',
+    'destination': 'Maldives',
+    'price': 200
+  },
+  {
+    'image': 'bedroom6.jpg',
+    'place': 'Mountain Retreat',
+    'destination': 'Switzerland',
+    'price': 180
+  },
+  {
+    'image': 'bedroom7.jpg',
+    'place': 'Desert Oasis',
+    'destination': 'Dubai',
+    'price': 90
+  },
+  {
+    'image': 'bedroom1.jpg',
+    'place': 'City Lights',
+    'destination': 'Tokyo',
+    'price': 120
+  },
+  {
+    'image': 'bedroom2.jpg',
+    'place': 'Historic Haven',
+    'destination': 'Rome',
+    'price': 80
+  },
+  {
+    'image': 'bedroom3.jpg',
+    'place': 'Tropical Paradise',
+    'destination': 'Hawaii',
+    'price': 250
+  },
+  {
+    'image': 'bedroom4.jpg',
+    'place': 'Countryside Charm',
+    'destination': 'Tuscany',
+    'price': 70
+  },
+  {
+    'image': 'bedroom5.jpg',
+    'place': 'Urban Chic',
+    'destination': 'Paris',
+    'price': 130
+  },
+  {
+    'image': 'bedroom6.jpg',
+    'place': 'Luxury Resort',
+    'destination': 'Bali',
+    'price': 300
+  },
+  {
+    'image': 'bedroom7.jpg',
+    'place': 'Island Escape',
+    'destination': 'Seychelles',
+    'price': 280
+  },
+  {
+    'image': 'bedroom7.jpg',
+    'place': 'Forest Cabin',
+    'destination': 'Canada',
+    'price': 60
+  },
 ];
+
 List<Map<String, dynamic>> ticketList = [
   {
     'from': {'code': "NYC", 'name': "New-York"},
