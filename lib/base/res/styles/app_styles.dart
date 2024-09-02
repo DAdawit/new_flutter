@@ -10,6 +10,7 @@ class AppStyles {
   static Color kakiColor = const Color(0xFFd2bdb6);
   static Color plainText = const Color(0XFFBFC2DF);
   static Color bgColor = const Color.fromARGB(255, 223, 220, 220);
+  static Color buttonColor = const Color(0XD91130CE);
 
   static TextStyle textStyle =
       TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: textColor);
