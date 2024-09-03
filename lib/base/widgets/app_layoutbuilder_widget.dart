@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppLayoutbuilderWidget extends StatelessWidget {
@@ -12,7 +11,7 @@ class AppLayoutbuilderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-      print("${(constraints.constrainWidth() / randomDivider).floor()}");
+      // print("${(constraints.constrainWidth() / randomDivider).floor()}");
       return Flex(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           direction: Axis.horizontal,

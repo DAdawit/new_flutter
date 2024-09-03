@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/base/res/styles/app_styles.dart';
@@ -8,7 +7,6 @@ import 'package:flutter_application_1/base/widgets/app_double_text.dart';
 import 'package:flutter_application_1/screens/search/widgets/app_text_icon.dart';
 import 'package:flutter_application_1/screens/search/widgets/app_ticket_tabs.dart';
 import 'package:flutter_application_1/screens/search/widgets/find_ticket.dart';
-import 'package:flutter_application_1/base/utils/app_routes.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -85,6 +83,24 @@ class SearchScreen extends StatelessWidget {
                       )
                     ],
                   ),
+                ),
+                Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 15),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.teal),
+                      child: const Column(
+                        children: [
+                          Text("Discount for survey"),
+                          Text(
+                              "Take the survey about our service and get disscount"),
+                        ],
+                      ),
+                    )
+                  ],
                 )
               ],
             )
