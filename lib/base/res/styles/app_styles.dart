@@ -11,6 +11,7 @@ class AppStyles {
   static Color plainText = const Color(0XFFBFC2DF);
   static Color bgColor = const Color.fromARGB(255, 223, 220, 220);
   static Color buttonColor = const Color(0XD91130CE);
+  static Color circleColor = const Color(0XFF189999);
 
   static TextStyle textStyle =
       TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: textColor);
