@@ -24,7 +24,10 @@ class SearchScreen extends StatelessWidget {
               "What are\n you looking for?",
               style: AppStyles.headLine1.copyWith(fontSize: 35),
             ),
-            const AppTicketTabs(),
+            const AppTicketTabs(
+              leftText: "All Tickets",
+              rightText: "Hotels",
+            ),
             const SizedBox(
               height: 20,
             ),
