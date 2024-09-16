@@ -6,26 +6,33 @@ import 'package:flutter_application_1/base/widgets/ticket_view.dart';
 import 'package:flutter_application_1/screens/search/widgets/app_ticket_tabs.dart';
 import 'package:flutter_application_1/screens/tickets/widgets/ticket_card.dart';
 
-class TicketsScreen extends StatelessWidget {
+class TicketsScreen extends StatefulWidget {
   const TicketsScreen({super.key});
+
+  @override
+  State<TicketsScreen> createState() => _TicketsScreenState();
+}
+
+class _TicketsScreenState extends State<TicketsScreen> {
+  @override
+  void didChangeDependencies() {
+    var args = ModalRoute.of(context)!.settings.arguments as Map;
+
+    super.didChangeDependencies();
+    print(args);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Ticket"),
+        backgroundColor: AppStyles.bgColor,
+      ),
       backgroundColor: AppStyles.bgColor,
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         children: [
-          const SizedBox(
-            height: 30,
-          ),
-          Text(
-            "Tickets",
-            style: AppStyles.headLine1.copyWith(fontSize: 35),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
           const AppTicketTabs(
             leftText: "Upcomming",
             rightText: "Previous",

@@ -24,5 +24,5 @@ class AppRoutes {
   static const home = "/";
   static const allTickets = "all_tickets";
   static const hotels = "hotels";
-  static const ticketView = "ticket_view";
+  static const ticketScreen = "ticketScreen";
 }

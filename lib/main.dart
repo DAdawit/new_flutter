@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRoutes.home: (context) => const BottomNavBar(),
         AppRoutes.allTickets: (context) => const AllTickets(),
-        AppRoutes.ticketView: (context) => const TicketsScreen(),
+        AppRoutes.ticketScreen: (context) => const TicketsScreen(),
         AppRoutes.hotels: (context) => const Hotels(),
       },
     );
