@@ -157,3 +157,15 @@ List<Map<String, dynamic>> ticketList = [
     "number": 12
   }
 ];
+
+Map<String, dynamic> ticketDetail = {
+  'passenger': "Flutter DB",
+  'passport': "5221 364869",
+  'number_of_eTicket': '364738 2827448',
+  'booking_code': "B2SG28",
+  'payment_method': {
+    'code': "B2SG28",
+    'image': 'visa.png',
+    'price': "249.99",
+  },
+};

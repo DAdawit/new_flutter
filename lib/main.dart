@@ -19,13 +19,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       routes: AppRoutes.getRoutes(),
-
-      // home: const BottomNavBar(),
-      // routes: {
-      //   "/": (context) => const BottomNavBar(),
-      //   "all_tickets": (context) => const AllTickets(),
-      //   "hotels": (context) => const Hotels()
-      // },
     );
   }
 }

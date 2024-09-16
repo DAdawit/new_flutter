@@ -16,3 +16,9 @@ class AppRoutes {
     };
   }
 }
+
+// class AppRoutes {
+//   static const home = "/";
+//   static const allTickets = "all_tickets";
+//   static const hotels = "hotels";
+// }

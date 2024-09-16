@@ -78,8 +78,10 @@ class HomeScreen extends StatelessWidget {
                       // children: [Tickeview(), Tickeview(), Tickeview()],
                       children: ticketList
                           .take(3)
-                          .map(
-                              (singleTicket) => Tickeview(ticket: singleTicket))
+                          .map((singleTicket) => Tickeview(
+                                ticket: singleTicket,
+                                isColored: true,
+                              ))
                           .toList(),
                     )),
                 const SizedBox(height: 48),

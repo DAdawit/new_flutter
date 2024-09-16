@@ -26,6 +26,7 @@ class AllTickets extends StatelessWidget {
                       .map((singleTicket) => Tickeview(
                             ticket: singleTicket,
                             wholeScreen: true,
+                            isColored: true,
                           ))
                       .toList(),
                 )),
