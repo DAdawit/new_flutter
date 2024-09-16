@@ -23,10 +23,19 @@ class AllTickets extends StatelessWidget {
                   // children: [Tickeview(), Tickeview(), Tickeview()],
                   children: ticketList
                       .take(5)
-                      .map((singleTicket) => Tickeview(
-                            ticket: singleTicket,
-                            wholeScreen: true,
-                            isColored: true,
+                      .map((singleTicket) => GestureDetector(
+                            onTap: () {
+                              var index = ticketList.indexOf(singleTicket);
+                              print('i am tapped on the index ${index}');
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.only(bottom: 16),
+                              child: Tickeview(
+                                ticket: singleTicket,
+                                wholeScreen: true,
+                                isColored: true,
+                              ),
+                            ),
                           ))
                       .toList(),
                 )),

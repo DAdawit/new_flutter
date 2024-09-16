@@ -180,10 +180,7 @@ class Tickeview extends StatelessWidget {
                       ],
                     ),
                     // show deparure and destination with icons first lline
-                    const SizedBox(height: 3),
-                    const Row(
-                      children: [],
-                    ),
+                    // const SizedBox(height: ),
                   ],
                 ),
               ),
