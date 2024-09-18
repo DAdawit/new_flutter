@@ -25,4 +25,5 @@ class AppRoutes {
   static const allTickets = "all_tickets";
   static const hotels = "hotels";
   static const ticketScreen = "ticketScreen";
+  static const hotelDetail = "hotelDetail";
 }
