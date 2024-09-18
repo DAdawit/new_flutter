@@ -31,8 +31,7 @@ class AllTickets extends StatelessWidget {
                                   context, AppRoutes.ticketScreen,
                                   arguments: {
                                     "index": index,
-                                    "_from": singleTicket["from"]["name"],
-                                    "_to": singleTicket["to"]["name"],
+                                    "ticketDetail": singleTicket,
                                   });
                               // print('i am tapped on the index ${index}');
                             },

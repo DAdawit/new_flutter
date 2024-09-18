@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base/res/styles/app_styles.dart';
 import 'package:flutter_application_1/base/utils/all_json.dart';
 import 'package:flutter_application_1/base/widgets/ticket_view.dart';
-
 import 'package:flutter_application_1/screens/search/widgets/app_ticket_tabs.dart';
 import 'package:flutter_application_1/screens/tickets/widgets/ticket_card.dart';
 
@@ -14,12 +13,16 @@ class TicketsScreen extends StatefulWidget {
 }
 
 class _TicketsScreenState extends State<TicketsScreen> {
+  late int index = 0;
   @override
   void didChangeDependencies() {
-    var args = ModalRoute.of(context)!.settings.arguments as Map;
+    if (ModalRoute.of(context)!.settings.arguments != null) {
+      var args = ModalRoute.of(context)!.settings.arguments as Map;
+      index = args["index"];
+    }
 
     super.didChangeDependencies();
-    print(args);
+    // print(args);
   }
 
   @override
@@ -41,7 +44,7 @@ class _TicketsScreenState extends State<TicketsScreen> {
             height: 30,
           ),
           Tickeview(
-            ticket: ticketList[0],
+            ticket: ticketList[index],
             wholeScreen: true,
             isColored: false,
           ),
@@ -50,7 +53,7 @@ class _TicketsScreenState extends State<TicketsScreen> {
             height: 30,
           ),
           Tickeview(
-            ticket: ticketList[0],
+            ticket: ticketList[index],
             wholeScreen: true,
             isColored: true,
           ),

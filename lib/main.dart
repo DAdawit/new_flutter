@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base/bottom_nav_bar.dart';
 import 'package:flutter_application_1/base/utils/app_routes.dart';
 import 'package:flutter_application_1/screens/home/all_tickets.dart';
-import 'package:flutter_application_1/screens/home/hotels.dart';
+import 'package:flutter_application_1/screens/Hotel/hotel_screen.dart';
 import 'package:flutter_application_1/screens/tickets/tickets_screen.dart';
 
 void main() {
@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter',
       routes: {
         AppRoutes.home: (context) => const BottomNavBar(),
         AppRoutes.allTickets: (context) => const AllTickets(),
         AppRoutes.ticketScreen: (context) => const TicketsScreen(),
-        AppRoutes.hotels: (context) => const Hotels(),
+        AppRoutes.hotels: (context) => const HotelScreen(),
       },
     );
   }

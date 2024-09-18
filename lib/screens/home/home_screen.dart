@@ -7,7 +7,7 @@ import 'package:flutter_application_1/base/utils/all_json.dart';
 import 'package:flutter_application_1/base/utils/app_routes.dart';
 import 'package:flutter_application_1/base/widgets/app_double_text.dart';
 import 'package:flutter_application_1/base/widgets/ticket_view.dart';
-import 'package:flutter_application_1/screens/widgets/hotel.dart';
+import 'package:flutter_application_1/screens/Hotel/widgets/hotel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
