@@ -92,13 +92,25 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: hotelList
-                          .take(5)
-                          .map((singleHotel) => Hotel(hotel: singleHotel))
-                          .toList(),
-                    ))
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: hotelList
+                        .asMap() // Use asMap() to get both index and hotel data
+                        .entries
+                        .take(5)
+                        .map((entry) => GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, AppRoutes.hotelDetail,
+                                    arguments: {"index": entry.key});
+                              },
+                              child: Hotel(
+                                  hotel: entry.value, // Hotel data
+                                  index: entry.key),
+                            )) // The current index
+                        .toList(),
+                  ),
+                )
               ],
             ),
           ),

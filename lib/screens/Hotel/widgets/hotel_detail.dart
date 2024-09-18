@@ -100,7 +100,7 @@ class _HotelDetailState extends State<HotelDetail> {
                 style: AppStyles.headLine3,
               ),
             ),
-            Container(
+            SizedBox(
               height: 200,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,

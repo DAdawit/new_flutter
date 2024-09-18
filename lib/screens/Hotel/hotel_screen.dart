@@ -57,7 +57,7 @@ class HotelGridView extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        print('from hotel screen index ${index}');
+        print('from hotel screen index $index');
         Navigator.pushNamed(context, AppRoutes.hotelDetail,
             arguments: {"index": index});
       },
