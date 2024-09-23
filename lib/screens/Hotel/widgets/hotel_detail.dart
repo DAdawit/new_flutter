@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/base/res/styles/app_styles.dart';
 import 'package:flutter_application_1/base/utils/all_json.dart';
+import 'package:flutter_application_1/base/utils/app_routes.dart';
 
 class HotelDetail extends StatefulWidget {
   const HotelDetail({super.key});
@@ -104,14 +105,20 @@ class _HotelDetailState extends State<HotelDetail> {
               height: 200,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 10,
+                  itemCount: hotelList.length,
                   itemBuilder: (context, index) {
-                    return Container(
-                      margin: const EdgeInsets.all(8),
-                      height: 175,
-                      width: 175,
-                      child: Image.network(
-                          "https://picsum.photos/seed/picsum/175/175"),
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.hotelDetail,
+                            arguments: {"index": index});
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.all(8),
+                        height: 175,
+                        width: 175,
+                        child: Image.asset(
+                            "assets/images/${hotelList[index]["image"]}"),
+                      ),
                     );
                   }),
             )
