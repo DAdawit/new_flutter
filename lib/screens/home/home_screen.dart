@@ -75,12 +75,23 @@ class HomeScreen extends StatelessWidget {
                 SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
-                      // children: [Tickeview(), Tickeview(), Tickeview()],
                       children: ticketList
                           .take(3)
-                          .map((singleTicket) => Tickeview(
-                                ticket: singleTicket,
-                                isColored: true,
+                          .map((singleTicket) => GestureDetector(
+                                onTap: () {
+                                  var index = ticketList.indexOf(singleTicket);
+                                  Navigator.pushNamed(
+                                      context, AppRoutes.ticketScreen,
+                                      arguments: {
+                                        "index": index,
+                                        "ticketDetail": singleTicket
+                                      });
+                                  print("hello mother father!");
+                                },
+                                child: Tickeview(
+                                  ticket: singleTicket,
+                                  isColored: true,
+                                ),
                               ))
                           .toList(),
                     )),
