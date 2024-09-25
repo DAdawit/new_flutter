@@ -3,11 +3,10 @@ import 'package:flutter_application_1/base/res/styles/app_styles.dart';
 
 class AppDoubleText extends StatelessWidget {
   const AppDoubleText(
-      {Key? key,
+      {super.key,
       required this.bigText,
       required this.smallText,
-      required this.fun})
-      : super(key: key);
+      required this.fun});
 
   final String bigText;
   final String smallText;

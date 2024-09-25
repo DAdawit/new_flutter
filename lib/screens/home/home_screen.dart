@@ -7,7 +7,7 @@ import 'package:flutter_application_1/base/utils/all_json.dart';
 import 'package:flutter_application_1/base/utils/app_routes.dart';
 import 'package:flutter_application_1/base/widgets/app_double_text.dart';
 import 'package:flutter_application_1/base/widgets/ticket_view.dart';
-import 'package:flutter_application_1/screens/widgets/hotel.dart';
+import 'package:flutter_application_1/screens/Hotel/widgets/hotel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -75,11 +75,24 @@ class HomeScreen extends StatelessWidget {
                 SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
-                      // children: [Tickeview(), Tickeview(), Tickeview()],
                       children: ticketList
                           .take(3)
-                          .map(
-                              (singleTicket) => Tickeview(ticket: singleTicket))
+                          .map((singleTicket) => GestureDetector(
+                                onTap: () {
+                                  var index = ticketList.indexOf(singleTicket);
+                                  Navigator.pushNamed(
+                                      context, AppRoutes.ticketScreen,
+                                      arguments: {
+                                        "index": index,
+                                        "ticketDetail": singleTicket
+                                      });
+                                  print("hello mother father!");
+                                },
+                                child: Tickeview(
+                                  ticket: singleTicket,
+                                  isColored: true,
+                                ),
+                              ))
                           .toList(),
                     )),
                 const SizedBox(height: 48),
@@ -90,13 +103,25 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: hotelList
-                          .take(5)
-                          .map((singleHotel) => Hotel(hotel: singleHotel))
-                          .toList(),
-                    ))
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: hotelList
+                        .asMap() // Use asMap() to get both index and hotel data
+                        .entries
+                        .take(5)
+                        .map((entry) => GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, AppRoutes.hotelDetail,
+                                    arguments: {"index": entry.key});
+                              },
+                              child: Hotel(
+                                  hotel: entry.value, // Hotel data
+                                  index: entry.key),
+                            )) // The current index
+                        .toList(),
+                  ),
+                )
               ],
             ),
           ),
@@ -105,3 +130,23 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+// final List<String> entries = <String>['A', 'B', 'C'];
+// final List<int> colorCodes = <int>[600, 500, 100];
+
+// Widget build(BuildContext context) {
+//   return ListView.builder(
+//       padding: const EdgeInsets.all(8),
+//       itemCount: entries.length,
+//       itemBuilder: (BuildContext context, int index) {
+//         return Container(
+//           height: 50,
+//           color: Colors.amber[colorCodes[index]],
+//           child: Center(child: Text('Entry ${entries[index]}')),
+//         );
+//       });
+// }
